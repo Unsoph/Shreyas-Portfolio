@@ -42,11 +42,13 @@
     setTimeout(showNextBootLine, 120);
   }
 
+  let dismissRan = false;
   function dismissBoot() {
-    if (!bootOverlay) return;
+    if (dismissRan || !bootOverlay) return;
+    dismissRan = true;
     bootOverlay.classList.add('fade-out');
     setTimeout(() => {
-      bootOverlay.remove();
+      if (bootOverlay.parentNode) bootOverlay.remove();
       initAfterBoot();
     }, 600);
   }
@@ -225,31 +227,57 @@
 
   /* ---- BLUEPRINT TOGGLE ---- */
   function initBlueprintToggle() {
-    const btn = document.getElementById('blueprint-toggle');
+    let btn = document.getElementById('blueprint-toggle');
     if (!btn) return;
-    btn.addEventListener('click', () => {
-      document.body.classList.toggle('blueprint');
-      btn.classList.toggle('active');
-      btn.textContent = document.body.classList.contains('blueprint') ? 'NORMAL' : 'BLUEPRINT';
+
+    // Clone to prevent double-listener bugs
+    const newBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(newBtn, btn);
+    btn = newBtn;
+
+    let isBlueprint = document.body.classList.contains('blueprint');
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      isBlueprint = !isBlueprint;
+      
+      if (isBlueprint) {
+        document.body.classList.add('blueprint');
+        btn.classList.add('active');
+        btn.textContent = 'NORMAL';
+      } else {
+        document.body.classList.remove('blueprint');
+        btn.classList.remove('active');
+        btn.textContent = 'BLUEPRINT';
+      }
     });
   }
 
   /* ---- SOUND TOGGLE ---- */
   function initSoundToggle() {
-    const btn = document.getElementById('sound-toggle');
+    let btn = document.getElementById('sound-toggle');
     if (!btn) return;
+
+    const newBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(newBtn, btn);
+    btn = newBtn;
+
     let enabled = false;
     let audioCtx = null;
 
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       enabled = !enabled;
-      btn.classList.toggle('active', enabled);
-      btn.textContent = enabled ? 'SFX ON' : 'SFX OFF';
-      // Create / resume AudioContext on first user gesture
-      if (enabled && !audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      
+      if (enabled) {
+        btn.classList.add('active');
+        btn.textContent = 'SFX ON';
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+      } else {
+        btn.classList.remove('active');
+        btn.textContent = 'SFX OFF';
       }
-      if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
     });
 
     // Attach click sounds to interactive elements
