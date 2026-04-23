@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shreyas Sharma — Robotics & Embedded Systems</title>
+  <meta name="description" content="Portfolio of Shreyas Sharma — robotics, embedded systems, and applied ML. B.Tech in Automation & Robotics at SRMIST, Chennai. Building autonomous systems, perception pipelines, and IoT platforms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #boot-overlay { opacity: 1; }
+    #boot-overlay .boot-line { transition: opacity 0.1s ease; }
+  </style>
+</head>
+<body>
+
+<!-- BOOT SEQUENCE -->
+<div id="boot-overlay">
+  <div id="boot-content"></div>
+  <span class="boot-cursor"></span>
+</div>
+
+<div id="scroll-progress"></div>
+<div id="custom-cursor"></div>
+<canvas id="cursor-trail"></canvas>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-logo">SHREYAS</div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Stack</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button class="nav-toggle-btn" id="blueprint-toggle">BLUEPRINT</button></li>
+    <li><button class="nav-toggle-btn" id="sound-toggle">SFX OFF</button></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <h1 class="hero-name">SHREYAS SHARMA</h1>
+    <p class="hero-subtitle" id="hero-subtitle">Robotics · Embedded Systems · Applied ML</p>
+    <p class="hero-bio">B.Tech in Automation & Robotics at SRM Institute of Science and Technology, Chennai. I build autonomous systems, embedded controllers, and ML pipelines — from bare-metal firmware to full-stack dashboards. Previously an AI Engineer Intern at QID.</p>
+    <div class="hero-actions">
+      <a href="#projects">VIEW PROJECTS</a>
+      <a href="#contact">GET IN TOUCH</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">Scroll<span></span></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">[01] // About</div>
+  <h2 class="section-title">About</h2>
+  <div class="about-grid reveal">
+    <div class="portrait-frame">
+      <svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="10" width="40" height="45" rx="0" stroke="#00F5FF" stroke-width="0.5" fill="none"/>
+        <line x1="50" y1="55" x2="50" y2="95" stroke="#00F5FF" stroke-width="0.5"/>
+        <line x1="50" y1="65" x2="25" y2="85" stroke="#00F5FF" stroke-width="0.5"/>
+        <line x1="50" y1="65" x2="75" y2="85" stroke="#00F5FF" stroke-width="0.5"/>
+        <line x1="50" y1="95" x2="30" y2="130" stroke="#00F5FF" stroke-width="0.5"/>
+        <line x1="50" y1="95" x2="70" y2="130" stroke="#00F5FF" stroke-width="0.5"/>
+      </svg>
+      <div class="scan-line"></div>
+    </div>
+    <div class="about-text">
+      <p>I'm Shreyas Sharma, a final-year B.Tech student in Automation & Robotics at SRM Institute of Science and Technology, Chennai.</p>
+      <p>I work across the stack — embedded firmware on ESP32 and Arduino, perception pipelines with YOLO and OpenCV, motion control with ROS2, and local backend systems with Node.js and React. My projects range from autonomous robotic arms and drone tracking systems to real-time IoT monitoring dashboards.</p>
+      <p>In summer 2025, I interned at QID as an AI Engineer, building real-time detection pipelines with YOLOv8, OpenCV, and ONNX Runtime — deployed across local systems and GCP.</p>
+      <p>I'm looking for opportunities in robotics, embedded systems, computer vision, and applied ML — anywhere I can build systems that work in the real world.</p>
+      <div class="system-summary">
+        <div class="summary-item"><span class="summary-label">EDUCATION</span><span class="summary-val">B.Tech Automation & Robotics, SRMIST</span></div>
+        <div class="summary-item"><span class="summary-label">LANGUAGES</span><span class="summary-val">Python · C/C++ · Embedded C · JS/TS</span></div>
+        <div class="summary-item"><span class="summary-label">FOCUS</span><span class="summary-val">Robotics · Embedded · ML/CV · IoT · Control</span></div>
+        <div class="summary-item"><span class="summary-label">EXPERIENCE</span><span class="summary-val">AI Engineer Intern — QID (2025)</span></div>
+      </div>
+      <div class="about-tags">
+        <span>ROBOTICS</span>
+        <span>EMBEDDED SYSTEMS</span>
+        <span>COMPUTER VISION</span>
+        <span>MACHINE LEARNING</span>
+        <span>IoT</span>
+        <span>CONTROL SYSTEMS</span>
+        <span>ROS2</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">[02] // Experience</div>
+  <h2 class="section-title">Experience</h2>
+  <div class="timeline-container reveal">
+    <div class="timeline-item">
+      <div class="timeline-date">May 2025 — July 2025</div>
+      <div class="timeline-title">AI Engineer Intern</div>
+      <div class="timeline-org">QID</div>
+      <div class="timeline-desc">Developed end-to-end processing pipelines using YOLOv8, OpenCV, and ONNX Runtime for real-time detection. Built orientation correction and preprocessing modules robust to lighting, rotation, and resolution changes. Deployed scalable pipelines across local systems and GCP. Maintained reproducible datasets and deployment workflows.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2024 — 2025</div>
+      <div class="timeline-title">Research Project Member — 6-DOF Robotic Arm</div>
+      <div class="timeline-org">SRMIST, Mechatronics Team</div>
+      <div class="timeline-desc">Collaborated with a mechatronics team on a 6-DOF robotic arm. Built autonomous object identification and sorting workflows using ROS2 and OpenCV. Worked with sensor data streams and calibration workflows for manipulation tasks.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2022 — Present</div>
+      <div class="timeline-title">B.Tech in Automation & Robotics</div>
+      <div class="timeline-org">SRM Institute of Science and Technology, Chennai</div>
+      <div class="timeline-desc">Coursework includes control systems, embedded systems, robotics, machine learning, and QNX RTOS. Building independent projects across robotics, ML/CV, IoT, and industrial automation.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS / STACK -->
+<section id="skills">
+  <div class="section-label">[03] // Technical Stack</div>
+  <h2 class="section-title">Stack</h2>
+  <p class="section-intro reveal">Tools and technologies I actively build with.</p>
+  <div class="skills-tag-groups reveal">
+    <div class="skill-group">
+      <h4 class="skill-group-title">Core Languages</h4>
+      <div class="skill-tags">
+        <span>Python</span><span>C / C++</span><span>Embedded C</span><span>Bash</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4 class="skill-group-title">Robotics & Embedded</h4>
+      <div class="skill-tags">
+        <span>ROS2</span><span>ESP32</span><span>Arduino</span><span>Raspberry Pi</span><span>PCA9685 / PWM</span><span>MQTT</span><span>I2C / Serial</span><span>URDF</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4 class="skill-group-title">ML & Computer Vision</h4>
+      <div class="skill-tags">
+        <span>YOLOv8</span><span>OpenCV</span><span>ONNX Runtime</span><span>Scikit-learn</span><span>XGBoost</span><span>ByteTrack</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h4 class="skill-group-title">Systems & Workflow</h4>
+      <div class="skill-tags">
+        <span>Git</span><span>Linux</span><span>Docker</span><span>GCP</span><span>QNX RTOS (coursework)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section id="projects">
+  <div class="section-label">[04] // Projects</div>
+  <h2 class="section-title">Featured Projects</h2>
+  <p class="section-intro reveal">Larger systems where I own the full build — from hardware to software.</p>
+  <div class="missions-grid reveal">
+
+    <div class="mission-card" data-category="ROBOTICS">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">Autonomous EV Charging Robot</div>
+        <span class="mission-status in-progress">In Progress</span>
+      </div>
+      <p class="mission-summary">Robotic arm that autonomously locates and docks an EV charging connector using computer vision and depth sensing.</p>
+      <p class="mission-desc">End-to-end perception-to-control pipeline. Custom Transformer-Enhanced YOLO (EVS-YOLO) for charging port detection. RGB-D camera and IMU integration for pose estimation. ROS2 nodes for frame transforms and control. Designed around a custom 5-DOF arm.</p>
+      <div class="mission-stack">
+        <span>ROS2</span><span>EVS-YOLO</span><span>RGB-D</span><span>IMU</span><span>Python</span>
+      </div>
+    </div>
+
+    <div class="mission-card" data-category="EMBEDDED">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">SmartNode — IoT Energy Monitoring System</div>
+        <span class="mission-status deployed">Working</span>
+      </div>
+      <p class="mission-summary">Full-stack local IoT system for real-time energy monitoring with ESP32 nodes, MQTT broker, and a React dashboard.</p>
+      <p class="mission-desc">ESP32 firmware publishes sensor telemetry over MQTT to a local Mosquitto broker. Node.js/TypeScript backend bridges data to a React/Vite frontend via WebSocket. Real-time per-appliance visualization. Fully local — no cloud dependencies. Earlier versions used Unity 3D for digital twin visualization.</p>
+      <div class="mission-stack">
+        <span>ESP32</span><span>MQTT</span><span>Node.js/TS</span><span>React</span><span>WebSocket</span>
+      </div>
+    </div>
+
+    <div class="mission-card" data-category="ML_CV">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">Drone Detection & Multi-Object Tracking</div>
+        <span class="mission-status in-progress">In Progress</span>
+      </div>
+      <p class="mission-summary">YOLO-based drone detection with ByteTrack multi-object tracking on a custom dataset.</p>
+      <p class="mission-desc">Per-frame YOLO detection with ByteTrack for persistent object IDs across video. Custom drone dataset. Full training, inference, and evaluation pipeline. Developed and benchmarked on Apple Silicon.</p>
+      <div class="mission-stack">
+        <span>YOLOv8</span><span>ByteTrack</span><span>OpenCV</span><span>Python</span>
+      </div>
+    </div>
+
+    <div class="mission-card" data-category="ROBOTICS">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">5-DOF Robotic Arm — Embedded Motion Control</div>
+        <span class="mission-status in-progress">In Progress</span>
+      </div>
+      <p class="mission-summary">Custom robotic arm with ESP32 firmware, PCA9685 servo driver, and Python-based inverse kinematics.</p>
+      <p class="mission-desc">4× MG996R torque servos + SG90 gripper. ESP32 + PCA9685 for synchronized PWM control. Task-structured embedded firmware. Python IK solver for pick-and-place paths. Designed to integrate with the EV charging perception stack.</p>
+      <div class="mission-stack">
+        <span>ESP32</span><span>PCA9685</span><span>Embedded C</span><span>Python</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MORE PROJECTS -->
+<section id="more-projects">
+  <h2 class="section-title">More Projects</h2>
+  <p class="section-intro reveal">Focused builds across embedded control, IoT, applied ML, and industrial automation.</p>
+  <div class="missions-grid reveal">
+
+    <div class="mission-card" data-category="ROBOTICS">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">6-DOF Robotic Arm — Object Sorting with ROS2</div>
+        <span class="mission-status research">Research</span>
+      </div>
+      <p class="mission-desc">Collaborative research project. Autonomous object identification and sorting using ROS2 and OpenCV. Sensor data stream integration and calibration workflows for a 6-DOF manipulator.</p>
+      <div class="mission-stack">
+        <span>ROS2</span><span>OpenCV</span><span>Python</span>
+      </div>
+    </div>
+
+    <div class="mission-card" data-category="ML_CV">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">Crime Classification — Applied ML Pipeline</div>
+        <span class="mission-status deployed">Complete</span>
+      </div>
+      <p class="mission-desc">End-to-end classification pipeline on real crime data. Full ETL and feature engineering. Multi-classifier comparison (including XGBoost) with metrics and confusion matrices. Reproducible experiment scripts and reusable inference pipeline.</p>
+      <div class="mission-stack">
+        <span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>XGBoost</span>
+      </div>
+    </div>
+
+    <div class="mission-card" data-category="ROBOTICS">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">Hexapod Robot — Servo Gait Control</div>
+        <span class="mission-status prototype">Prototype</span>
+      </div>
+      <p class="mission-desc">Terrain-capable six-legged walking robot. Multi-servo coordinated locomotion with gait pattern programming. Demonstrates legged robotics and multi-actuator control fundamentals.</p>
+      <div class="mission-stack">
+        <span>Arduino</span><span>Servo Control</span><span>C++</span>
+      </div>
+    </div>
+
+    <div class="mission-card" data-category="EMBEDDED">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">Ball-Balancing Robot — PID Control</div>
+        <span class="mission-status prototype">Prototype</span>
+      </div>
+      <p class="mission-desc">Closed-loop control system that balances a ball on a platform using PID feedback. Real-time sensor feedback with PID tuning for stable positioning. Classical control theory applied to physical hardware.</p>
+      <div class="mission-stack">
+        <span>PID</span><span>Sensors</span><span>Control Systems</span>
+      </div>
+    </div>
+
+    <div class="mission-card" data-category="EMBEDDED">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">Incubator Control System — ESP32 + I2C</div>
+        <span class="mission-status deployed">Complete</span>
+      </div>
+      <p class="mission-desc">Embedded closed-loop environmental controller. ESP32 as control master, Arduino Uno as display slave over I2C. Hysteresis-based actuator control for humidifier and exhaust fan. Real-time sensor visualization.</p>
+      <div class="mission-stack">
+        <span>ESP32</span><span>Arduino</span><span>I2C</span><span>Embedded C</span>
+      </div>
+    </div>
+
+    <div class="mission-card" data-category="EMBEDDED">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">Hospital Queue & Crowd Monitor — AIoT</div>
+        <span class="mission-status deployed">Complete</span>
+      </div>
+      <p class="mission-desc">ESP8266-based queue management. RC522 RFID for patient verification. Dual IR sensors for entry/exit counting. Auto token generation and queue logic. Web-based frontend for real-time monitoring.</p>
+      <div class="mission-stack">
+        <span>ESP8266</span><span>RFID</span><span>IR Sensors</span><span>HTML/JS</span>
+      </div>
+    </div>
+
+    <div class="mission-card" data-category="EMBEDDED">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">Industrial Thermal Management System</div>
+        <span class="mission-status deployed">Complete</span>
+      </div>
+      <p class="mission-desc">Temperature monitoring and cooling control. LM35 temperature sensing. 24V DC cooling fan controlled via relay module. PLC-compatible interface with LED pilot lights.</p>
+      <div class="mission-stack">
+        <span>LM35</span><span>24V Relay</span><span>PLC Interface</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIMENTS -->
+<section id="experiments">
+  <h2 class="section-title">Experiments</h2>
+  <p class="section-intro reveal">Smaller explorations and learning projects.</p>
+  <div class="missions-grid reveal">
+
+    <div class="mission-card" data-category="EMBEDDED">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">Smart Irrigation — MQTT IoT Controller</div>
+        <span class="mission-status experiment">Experiment</span>
+      </div>
+      <p class="mission-desc">ESP32-based soil moisture monitoring with dual pumps, auto/manual modes, and MQTT dashboard control.</p>
+      <div class="mission-stack">
+        <span>ESP32</span><span>MQTT</span><span>Sensors</span>
+      </div>
+    </div>
+
+    <div class="mission-card" data-category="ML_CV">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">Twitter Engagement Bot</div>
+        <span class="mission-status experiment">Experiment</span>
+      </div>
+      <p class="mission-desc">Automated engagement bot with lightweight NLP-based content filtering.</p>
+      <div class="mission-stack">
+        <span>Python</span><span>NLP</span>
+      </div>
+    </div>
+
+    <div class="mission-card" data-category="ML_CV">
+      <div class="scan-fx"></div>
+      <div class="mission-header">
+        <div class="mission-codename">Flappy Bird — ML Agent Simulation</div>
+        <span class="mission-status experiment">Experiment</span>
+      </div>
+      <p class="mission-desc">Reinforcement learning experiment training an agent to play Flappy Bird.</p>
+      <div class="mission-stack">
+        <span>Python</span><span>ML</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">[06] // Contact</div>
+  <h2 class="section-title">Contact</h2>
+  <div class="contact-grid reveal">
+    <div class="contact-info">
+      <h3>Get in Touch</h3>
+      <p>Open to internships, research collaborations, and project discussions in robotics, embedded systems, and applied ML.</p>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M12 21c-4.97-5.03-8-8.54-8-12a8 8 0 1116 0c0 3.46-3.03 6.97-8 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Chennai, Tamil Nadu, India
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="0"/><path d="M22 4L12 13 2 4"/></svg>
+        sharma.shreyas.2k5@gmail.com
+      </div>
+      <div class="contact-socials">
+        <a href="https://github.com/Unsoph" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/shreyas-sharma05/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+    <form class="contact-form" id="contact-form">
+      <label class="terminal-label">> NAME:</label>
+      <input type="text" name="name" placeholder="_" required>
+      <label class="terminal-label">> EMAIL:</label>
+      <input type="email" name="email" placeholder="_" required>
+      <label class="terminal-label">> MESSAGE:</label>
+      <textarea name="message" placeholder="_" required></textarea>
+      <button type="submit">[SEND MESSAGE]</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer id="footer">
+  <span class="footer-sig">SHREYAS SHARMA // 2026</span>
+  <span class="footer-tech">HTML + CSS + Vanilla JS + GSAP</span>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top">&#8679;</button>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
