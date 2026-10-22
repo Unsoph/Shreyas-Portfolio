@@ -2,409 +2,637 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shreyas Sharma — Robotics & Embedded Systems</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b1a30'/><text x='50' y='70' font-family='sans-serif' font-size='65' font-weight='900' fill='%234a9eff' text-anchor='middle'>S</text></svg>">
-  <meta name="description" content="Portfolio of Shreyas Sharma — robotics, embedded systems, and applied ML. B.Tech in Automation & Robotics at SRMIST, Chennai. Building autonomous systems, perception pipelines, and IoT platforms.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shreyas Sharma, robotics and embedded engineer</title>
+  <meta name="description" content="Shreyas Sharma builds robots from the firmware up: RTOS on ARM Cortex-M, ROS 2 perception and manipulation, and computer vision that runs on edge hardware. B.Tech Automation & Robotics, SRMIST, graduating 2027.">
+  <meta name="theme-color" content="#E4E9EE" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111922" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://shreyassharma.dev/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shreyassharma.dev/">
+  <meta property="og:title" content="Shreyas Sharma, robotics and embedded engineer">
+  <meta property="og:description" content="Firmware, ROS 2 and edge computer vision. Internships at Dtown Robotics, Elcom Innovations and QID.">
+  <meta property="og:image" content="https://shreyassharma.dev/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    #boot-overlay { opacity: 1; }
-    #boot-overlay .boot-line { transition: opacity 0.1s ease; }
-  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shreyas Sharma",
+    "url": "https://shreyassharma.dev/",
+    "jobTitle": "Robotics and embedded systems engineer",
+    "alumniOf": "SRM Institute of Science and Technology",
+    "sameAs": ["https://github.com/Unsoph", "https://www.linkedin.com/in/shreyas-sharma05/"]
+  }
+  </script>
 </head>
 <body>
 
-<!-- BOOT SEQUENCE -->
-<div id="boot-overlay">
-  <div id="boot-content"></div>
-  <span class="boot-cursor"></span>
-</div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<div id="scroll-progress"></div>
-<div id="custom-cursor"></div>
-<canvas id="cursor-trail"></canvas>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#top" aria-label="Shreyas Sharma, back to top">
+      <svg class="wordmark-glyph" viewBox="0 0 32 32" aria-hidden="true"><use href="#glyph"/></svg>
+      <span>Shreyas Sharma</span>
+    </a>
+    <nav class="site-nav" aria-label="Sections">
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <ul id="nav-list">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#builds">Builds</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme-btn" type="button" aria-label="Switch colour theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" class="fill"/></svg>
+    </button>
+  </div>
+</header>
 
-<!-- NAV -->
-<nav id="main-nav">
-  <div class="nav-logo">SHREYAS</div>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Stack</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><button class="nav-toggle-btn" id="blueprint-toggle">BLUEPRINT</button></li>
-    <li><button class="nav-toggle-btn" id="sound-toggle">SFX OFF</button></li>
-  </ul>
-</nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="glyph" viewBox="0 0 32 32">
+    <circle cx="7" cy="25" r="3.2" fill="none" stroke="currentColor" stroke-width="2.4"/>
+    <path d="M7 25 L14 10 L26 13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="14" cy="10" r="2.6" fill="currentColor"/>
+    <circle cx="26" cy="13" r="2.6" fill="var(--kapton)"/>
+  </symbol>
+</svg>
 
-<main>
+<main id="main">
 
-<!-- HERO -->
-<section id="hero">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-content">
-    <h1 class="hero-name">SHREYAS SHARMA</h1>
-    <p class="hero-subtitle" id="hero-subtitle">Robotics · Embedded Systems · Applied ML</p>
-    <p class="hero-bio">B.Tech in Automation & Robotics at SRM Institute of Science and Technology, Chennai. I build autonomous systems, embedded controllers, and ML pipelines — from bare-metal firmware to full-stack dashboards. Previously an AI Engineer Intern at QID.</p>
+<!-- ============ HERO ============ -->
+<section class="hero wrap" id="top">
+  <div class="hero-copy">
+    <h1 class="hero-name">Shreyas Sharma</h1>
+    <p class="hero-lede">I build robots from the firmware up: RTOS tasks on microcontrollers, ROS&nbsp;2 on the robot, and vision models that have to run on the hardware they're given.</p>
+    <p class="hero-meta">Final-year B.Tech in Automation &amp; Robotics at SRMIST, Chennai. Three internships across UAV firmware, drone sensor fusion and computer vision. Looking for robotics, embedded and edge-AI roles from 2027.</p>
     <div class="hero-actions">
-      <a href="#projects">VIEW PROJECTS</a>
-      <a href="#contact">GET IN TOUCH</a>
+      <a class="btn btn-solid" href="#projects">See the projects</a>
+      <a class="btn btn-line" href="mailto:sharma.shreyas.2k5@gmail.com">Email me</a>
     </div>
+    <ul class="hero-links" aria-label="Profiles">
+      <li><a href="https://github.com/Unsoph" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/shreyas-sharma05/" rel="noopener">LinkedIn</a></li>
+    </ul>
   </div>
-  <div class="scroll-indicator">Scroll<span></span></div>
+
+  <figure class="workcell" aria-labelledby="workcell-caption">
+    <div class="workcell-stage">
+      <canvas id="arm" role="img" aria-label="A two-joint robot arm that reaches toward your pointer using inverse kinematics"></canvas>
+    </div>
+    <div class="readout" aria-live="off">
+      <div><span class="readout-k">Shoulder</span><span class="readout-v" id="ro-t1">0.0°</span></div>
+      <div><span class="readout-k">Elbow</span><span class="readout-v" id="ro-t2">0.0°</span></div>
+      <div><span class="readout-k">Tool x, y</span><span class="readout-v" id="ro-xy">0, 0 mm</span></div>
+      <div><span class="readout-k">Target</span><span class="readout-v" id="ro-state">Idle path</span></div>
+    </div>
+    <figcaption id="workcell-caption">Point anywhere in this panel. The arm solves two-link inverse kinematics and slews its joints toward the target at a limited rate, like a servo would. Click to close the gripper.</figcaption>
+  </figure>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-label">[01] // About</div>
-  <h2 class="section-title">About</h2>
-  <div class="about-grid reveal">
-    <div class="portrait-frame">
-      <svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg">
-        <rect x="30" y="10" width="40" height="45" rx="0" stroke="#00F5FF" stroke-width="0.5" fill="none"/>
-        <line x1="50" y1="55" x2="50" y2="95" stroke="#00F5FF" stroke-width="0.5"/>
-        <line x1="50" y1="65" x2="25" y2="85" stroke="#00F5FF" stroke-width="0.5"/>
-        <line x1="50" y1="65" x2="75" y2="85" stroke="#00F5FF" stroke-width="0.5"/>
-        <line x1="50" y1="95" x2="30" y2="130" stroke="#00F5FF" stroke-width="0.5"/>
-        <line x1="50" y1="95" x2="70" y2="130" stroke="#00F5FF" stroke-width="0.5"/>
-      </svg>
-      <div class="scan-line"></div>
+<!-- ============ EXPERIENCE ============ -->
+<section class="section wrap" id="work" aria-labelledby="work-h">
+  <div class="section-head">
+    <h2 id="work-h">Work</h2>
+    <p>Internships and research, most recent first.</p>
+  </div>
+
+  <ol class="timeline">
+    <li class="job">
+      <div class="job-when">
+        <time datetime="2026-06">Jun 2026</time> to <time datetime="2026-07">Jul 2026</time>
+        <span class="job-where">Noida, on-site</span>
+      </div>
+      <div class="job-body">
+        <h3>Robotics Engineer Intern <span class="at">at Dtown Robotics</span></h3>
+        <p class="job-project">Project: multi-sensor fusion framework for odometry estimation and autonomous drone navigation.</p>
+        <ul>
+          <li>Set up perception with an Orbbec Gemini depth camera and an RPLiDAR, and built a map that kept updating and saved itself as new scans and changes in the robot's pose came in.</li>
+          <li>Visualised robot position and orientation in RViz over ROS&nbsp;2 nodes.</li>
+          <li>Trained on LiDAR and IMU fusion, odometry calibration, and mission planning in QGroundControl.</li>
+        </ul>
+        <p class="tags"><span>ROS 2</span><span>RViz</span><span>RPLiDAR</span><span>Orbbec Gemini</span><span>QGroundControl</span></p>
+      </div>
+    </li>
+
+    <li class="job">
+      <div class="job-when">
+        <time datetime="2025-12">Dec 2025</time> to <time datetime="2026-01">Jan 2026</time>
+        <span class="job-where">Hybrid</span>
+      </div>
+      <div class="job-body">
+        <h3>R&amp;D Software Development Intern <span class="at">at Elcom Innovations</span></h3>
+        <ul>
+          <li>Wrote multi-threaded RTOS tasks with semaphores and queues on ARM Cortex-M4 and M7, using FreeRTOS and VxWorks.</li>
+          <li>Developed and flashed firmware for flight-control sensors and actuator drivers, focusing on low-latency sensor acquisition.</li>
+          <li>Supported subsystem integration workflows for a medium-altitude long-endurance (MALE) UAV.</li>
+        </ul>
+        <p class="tags"><span>C</span><span>FreeRTOS</span><span>VxWorks</span><span>ARM Cortex-M4/M7</span></p>
+      </div>
+    </li>
+
+    <li class="job">
+      <div class="job-when">
+        <time datetime="2025-05">May 2025</time> to <time datetime="2025-07">Jul 2025</time>
+        <span class="job-where">Remote</span>
+      </div>
+      <div class="job-body">
+        <h3>AI Engineer Intern <span class="at">at QID</span></h3>
+        <ul>
+          <li>Built a real-time detection pipeline with YOLOv8, OpenCV and ONNX Runtime.</li>
+          <li>Worked on OCR and document understanding, including preprocessing and orientation correction that held up across lighting, rotation and resolution changes.</li>
+          <li>Deployed for low-latency local and cloud (GCP) use, with reproducible Git-based workflows.</li>
+        </ul>
+        <p class="tags"><span>Python</span><span>YOLOv8</span><span>OpenCV</span><span>ONNX Runtime</span><span>OCR</span><span>GCP</span></p>
+      </div>
+    </li>
+
+    <li class="job">
+      <div class="job-when">
+        <time datetime="2024">2024</time> to <time datetime="2025">2025</time>
+        <span class="job-where">Chennai</span>
+      </div>
+      <div class="job-body">
+        <h3>Research project member <span class="at">at SRMIST</span></h3>
+        <ul>
+          <li>Worked with a mechatronics team on a 6-DOF robotic arm: object identification and sorting with ROS&nbsp;2 and OpenCV, plus sensor calibration for manipulation tasks.</li>
+        </ul>
+        <p class="tags"><span>ROS 2</span><span>OpenCV</span><span>Python</span></p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ FLAGSHIP PROJECTS ============ -->
+<section class="section wrap" id="projects" aria-labelledby="projects-h">
+  <div class="section-head">
+    <h2 id="projects-h">Projects</h2>
+    <p>The five systems I've put the most into. Each one says what's built and what isn't yet.</p>
+  </div>
+
+  <dl class="legend" aria-label="What each status means">
+    <div><dt><span class="status s-shipped">Shipped</span></dt><dd>Works end to end</dd></div>
+    <div><dt><span class="status s-active">Active</span></dt><dd>In development now</dd></div>
+    <div><dt><span class="status s-sim">Simulation</span></dt><dd>Verified in simulation only</dd></div>
+    <div><dt><span class="status s-proto">Prototype</span></dt><dd>Hardware built, partly working</dd></div>
+    <div><dt><span class="status s-concept">Concept</span></dt><dd>Designed, not built</dd></div>
+  </dl>
+
+  <article class="project project-lead" aria-labelledby="p-shade">
+    <div class="project-intro">
+      <div class="project-title-row">
+        <h3 id="p-shade">SHADE</h3>
+        <span class="status s-active">Active</span>
+      </div>
+      <p class="project-sub">Self-Healing Adaptive Deployment Engine</p>
+      <p>An operations layer for edge AI on a Raspberry Pi&nbsp;5. It watches temperature, throttle flags, memory, frame rate and camera health, steps the detector down a model ladder before the firmware throttles it, and steps back up only once it's safe. Every decision goes into an audit log you can query.</p>
+      <p class="tags"><span>Python</span><span>YOLOv8</span><span>ONNX Runtime</span><span>OpenCV</span><span>SQLite</span><span>Prometheus</span><span>systemd</span></p>
+      <p class="project-links"><a href="https://github.com/Unsoph/shade" rel="noopener">Source on GitHub</a></p>
     </div>
-    <div class="about-text">
-      <p>I'm Shreyas Sharma, a final-year B.Tech student in Automation & Robotics at SRM Institute of Science and Technology, Chennai.</p>
-      <p>I work across the stack — embedded firmware on ESP32 and Arduino, perception pipelines with YOLO and OpenCV, motion control with ROS2, and local backend systems with Node.js and React. My projects range from autonomous robotic arms and drone tracking systems to real-time IoT monitoring dashboards.</p>
-      <p>In summer 2025, I interned at QID as an AI Engineer, building real-time detection pipelines with YOLOv8, OpenCV, and ONNX Runtime — deployed across local systems and GCP.</p>
-      <p>I'm looking for opportunities in robotics, embedded systems, computer vision, and applied ML — anywhere I can build systems that work in the real world.</p>
-      <div class="system-summary">
-        <div class="summary-item"><span class="summary-label">EDUCATION</span><span class="summary-val">B.Tech Automation & Robotics, SRMIST</span></div>
-        <div class="summary-item"><span class="summary-label">LANGUAGES</span><span class="summary-val">Python · C/C++ · Embedded C · JS/TS</span></div>
-        <div class="summary-item"><span class="summary-label">FOCUS</span><span class="summary-val">Robotics · Embedded · ML/CV · IoT · Control</span></div>
-        <div class="summary-item"><span class="summary-label">EXPERIENCE</span><span class="summary-val">AI Engineer Intern — QID (2025)</span></div>
+
+    <div class="project-detail">
+      <figure class="ladder" aria-labelledby="ladder-cap">
+        <ol>
+          <li><b>nominal</b><span>640 px, every frame</span></li>
+          <li><b>frame-skip</b><span>640 px, every 2nd frame</span></li>
+          <li><b>small-320</b><span>320 px, every 2nd frame</span></li>
+          <li><b>emergency</b><span>320 px INT8, every 3rd frame</span></li>
+        </ol>
+        <figcaption id="ladder-cap">The degradation ladder from SHADE's default config. Pressure from heat or memory moves it down one rung at a time; calm moves it back up.</figcaption>
+      </figure>
+      <div class="bn">
+        <div>
+          <h4>Built</h4>
+          <ul>
+            <li>Decision engine with hysteresis, dwell, cooldown and temperature-slope anticipation</li>
+            <li>Background model preload with a RAM headroom check, swapped in at a frame boundary</li>
+            <li>Watchdog with hang detection, restart on the emergency rung and systemd notify</li>
+            <li><code>/metrics</code>, <code>/status</code> and a live status page</li>
+            <li>101 automated tests, plus fault-injection runs on a simulated device</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Next</h4>
+          <ul>
+            <li>Measure on a real Pi&nbsp;5. No hardware benchmarks are claimed yet, and the thresholds are reasoned defaults.</li>
+            <li>Write up the simulation results as a paper.</li>
+          </ul>
+        </div>
       </div>
-      <div class="about-tags">
-        <span>ROBOTICS</span>
-        <span>EMBEDDED SYSTEMS</span>
-        <span>COMPUTER VISION</span>
-        <span>MACHINE LEARNING</span>
-        <span>IoT</span>
-        <span>CONTROL SYSTEMS</span>
-        <span>ROS2</span>
+    </div>
+  </article>
+
+  <article class="project" aria-labelledby="p-ev">
+    <div class="project-intro">
+      <div class="project-title-row">
+        <h3 id="p-ev">Autonomous EV charging pipeline</h3>
+        <span class="status s-active">Active</span>
       </div>
+      <p>A 5-DOF arm with an RGB-D camera that finds an EV's charging socket so it can line the connector up with it.</p>
+      <p class="tags"><span>ROS 2 Jazzy</span><span>EVS-YOLO</span><span>RGB-D</span><span>Gazebo</span><span>RViz</span><span>URDF</span></p>
+      <p class="project-links"><span class="muted">Repository is private</span></p>
+    </div>
+    <div class="project-detail bn">
+      <div>
+        <h4>Built</h4>
+        <ul>
+          <li>Socket detection with a transformer-enhanced YOLO (EVS-YOLO)</li>
+          <li>Arm description ported to ROS&nbsp;2 Jazzy: URDF, meshes, launch files</li>
+          <li>Arm tested in Gazebo and RViz</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Next</h4>
+        <ul>
+          <li>Connect detection to ROS&nbsp;2 so the arm aligns with the socket it sees</li>
+          <li>Run it on the physical arm</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="project" aria-labelledby="p-servo">
+    <div class="project-intro">
+      <div class="project-title-row">
+        <h3 id="p-servo">YOLO visual servoing for ArduPilot</h3>
+        <span class="status s-sim">Simulation</span>
+      </div>
+      <p>A drone that follows a person by turning YOLOv8 detections into yaw, altitude and forward-speed commands.</p>
+      <p class="tags"><span>Python</span><span>YOLOv8</span><span>DroneKit</span><span>MAVLink</span><span>ArduPilot SITL</span><span>GStreamer</span></p>
+      <p class="project-links"><a href="https://github.com/Unsoph/ardupilot-yolo-visual-servoing" rel="noopener">Source on GitHub</a></p>
+    </div>
+    <div class="project-detail bn">
+      <div>
+        <h4>Built</h4>
+        <ul>
+          <li>Proportional control from box-centre and box-area error, sent as MAVLink velocity targets</li>
+          <li>Two modes: follow the target, or hold a fixed distance from it</li>
+          <li>Automatic takeoff, altitude safety bounds, and an H.264 stream to QGroundControl on a phone</li>
+          <li>Run against ArduPilot SITL with QGroundControl</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Next</h4>
+        <ul>
+          <li>Fly it on a real airframe</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="project" aria-labelledby="p-drone">
+    <div class="project-intro">
+      <div class="project-title-row">
+        <h3 id="p-drone">Drone detection and multi-object tracking</h3>
+        <span class="status s-shipped">Shipped</span>
+      </div>
+      <p>Detects drones in video and keeps a stable ID on each one, with an alert when a drone stays in view.</p>
+      <p class="tags"><span>YOLOv8</span><span>ByteTrack</span><span>BoT-SORT</span><span>OpenCV</span><span>CoreML</span><span>ONNX</span></p>
+      <p class="project-links"><a href="https://github.com/Unsoph/Drone-Detection-and-Tracking-System" rel="noopener">Source on GitHub</a></p>
+    </div>
+    <div class="project-detail bn">
+      <div>
+        <h4>Built</h4>
+        <ul>
+          <li>YOLOv8n trained on a custom drone dataset; mAP50 of 0.945 on its validation set</li>
+          <li>ByteTrack and BoT-SORT configs tuned for small, fast targets and crossing paths</li>
+          <li>Evaluation scripts for mAP and for MOTA and IDF1 tracking metrics</li>
+          <li>CoreML and ONNX export for Apple Silicon</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Next</h4>
+        <ul>
+          <li>Train YOLOv8m at 960 px to catch smaller, more distant drones</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="project" aria-labelledby="p-bc">
+    <div class="project-intro">
+      <div class="project-title-row">
+        <h3 id="p-bc">Behavioural&#8209;cloning robotic arm</h3>
+        <span class="status s-proto">Prototype</span>
+      </div>
+      <p>A servo arm that I'm teaching to repeat motions from teleoperated demonstrations, instead of hand-coding each move.</p>
+      <p class="tags"><span>ESP32</span><span>PCA9685</span><span>MG996R</span><span>TensorFlow</span></p>
+      <p class="project-links"><span class="muted">Repository is private</span></p>
+    </div>
+    <div class="project-detail bn">
+      <div>
+        <h4>Built</h4>
+        <ul>
+          <li>Arm hardware: ESP32 with a PCA9685 PWM driver, four MG996R servos and an SG90 gripper</li>
+          <li>TensorFlow experiments on learning motions from demonstrations</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Next</h4>
+        <ul>
+          <li>Collect a proper demonstration dataset and train the policy on it</li>
+          <li>Decide whether inference runs on the ESP32 or a companion board</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ============ SMALLER BUILDS ============ -->
+<section class="section wrap" id="builds" aria-labelledby="builds-h">
+  <div class="section-head">
+    <h2 id="builds-h">Smaller builds</h2>
+    <p>Hardware, IoT and vision projects. Open any row for the details.</p>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filter builds by area">
+    <button type="button" class="chip" aria-pressed="true" data-filter="all">All</button>
+    <button type="button" class="chip" aria-pressed="false" data-filter="robotics">Robotics</button>
+    <button type="button" class="chip" aria-pressed="false" data-filter="embedded">Embedded</button>
+    <button type="button" class="chip" aria-pressed="false" data-filter="iot">IoT</button>
+    <button type="button" class="chip" aria-pressed="false" data-filter="vision">Vision &amp; ML</button>
+  </div>
+
+  <ul class="builds">
+    <li data-area="iot">
+      <details>
+        <summary>
+          <span class="b-name">ESP32 smart irrigation</span>
+          <span class="b-area">IoT</span>
+          <span class="status s-shipped">Shipped</span>
+        </summary>
+        <div class="b-body">
+          <p>Team project. An ESP32 runs a state machine (idle, filling, ready, irrigating, fault) over an ultrasonic tank sensor, a soil-moisture sensor and two relay-driven pumps. Telemetry and commands go over MQTT to a browser dashboard and a local web UI. Any pump running past two minutes trips a fault, and thresholds persist in flash across reboots.</p>
+          <p class="tags"><span>ESP32</span><span>MQTT</span><span>HC-SR04</span><span>NVS</span></p>
+          <p class="project-links"><a href="https://unsoph.github.io/esp32-irrigation-dashboard/" rel="noopener">Live dashboard</a><a href="https://github.com/Unsoph/esp32-irrigation-dashboard" rel="noopener">Source</a></p>
+        </div>
+      </details>
+    </li>
+
+    <li data-area="vision">
+      <details>
+        <summary>
+          <span class="b-name">ID card detection and cropping</span>
+          <span class="b-area">Vision &amp; ML</span>
+          <span class="status s-shipped">Shipped</span>
+        </summary>
+        <div class="b-body">
+          <p>A YOLOv8 pipeline that finds an ID card in a photo, deskews it and crops it, with batch scripts for whole folders. A browser version runs the ONNX model entirely client-side with ONNX Runtime Web, and reads text with Tesseract.js.</p>
+          <p class="tags"><span>YOLOv8</span><span>ONNX Runtime Web</span><span>Tesseract.js</span><span>Vite</span></p>
+          <p class="project-links"><a href="https://github.com/Unsoph/Aadhaar-Card-Detection-and-Cropping" rel="noopener">Source</a></p>
+        </div>
+      </details>
+    </li>
+
+    <li data-area="robotics">
+      <details>
+        <summary>
+          <span class="b-name">SIXpack hexapod</span>
+          <span class="b-area">Robotics</span>
+          <span class="status s-proto">Prototype</span>
+        </summary>
+        <div class="b-body">
+          <p>A six-legged walker built on the delta3Robotics SIXpack design, driven by an ESP32-CAM and a PCA9685. Most of the work so far has been hardware debugging, servo calibration and fixing the I2C wiring, plus a full redesign of its web controller.</p>
+          <p class="tags"><span>ESP32-CAM</span><span>PCA9685</span><span>I2C</span></p>
+        </div>
+      </details>
+    </li>
+
+    <li data-area="embedded">
+      <details>
+        <summary>
+          <span class="b-name">Egg incubator with PID control</span>
+          <span class="b-area">Embedded</span>
+          <span class="status s-shipped">Shipped</span>
+        </summary>
+        <div class="b-body">
+          <p>Closed-loop temperature control with a PID loop, a mist maker for humidity and a fan for circulation. A touch display lets you pick target conditions by egg type. An ESP32 runs control and talks to an Arduino Uno driving the display over I2C.</p>
+          <p class="tags"><span>ESP32</span><span>Arduino</span><span>PID</span><span>I2C</span></p>
+        </div>
+      </details>
+    </li>
+
+    <li data-area="iot">
+      <details>
+        <summary>
+          <span class="b-name">Hospital queue and crowd monitor</span>
+          <span class="b-area">IoT</span>
+          <span class="status s-shipped">Shipped</span>
+        </summary>
+        <div class="b-body">
+          <p>An ESP8266 counts people with two IR sensors, issues queue tokens automatically on entry, and verifies them with an RC522 RFID reader. A web page shows the queue live.</p>
+          <p class="tags"><span>ESP8266</span><span>RC522 RFID</span><span>IR sensors</span><span>HTML/JS</span></p>
+        </div>
+      </details>
+    </li>
+
+    <li data-area="iot">
+      <details>
+        <summary>
+          <span class="b-name">SmartNode energy digital twin</span>
+          <span class="b-area">IoT</span>
+          <span class="status s-proto">Prototype</span>
+        </summary>
+        <div class="b-body">
+          <p>ESP32 sensor nodes publish home energy readings over MQTT to a central layer, shown first as a Unity 3D digital twin and later as a local React dashboard. No cloud in the loop.</p>
+          <p class="tags"><span>ESP32</span><span>Raspberry Pi</span><span>MQTT</span><span>Unity/C#</span></p>
+        </div>
+      </details>
+    </li>
+
+    <li data-area="embedded">
+      <details>
+        <summary>
+          <span class="b-name">Ball-balancing platform</span>
+          <span class="b-area">Embedded</span>
+          <span class="status s-proto">Prototype</span>
+        </summary>
+        <div class="b-body">
+          <p>A platform that keeps a ball in place using PID feedback from a position sensor. A hands-on exercise in tuning a real control loop rather than a simulated one.</p>
+          <p class="tags"><span>PID</span><span>Servos</span><span>Control systems</span></p>
+        </div>
+      </details>
+    </li>
+
+    <li data-area="embedded">
+      <details>
+        <summary>
+          <span class="b-name">Thermal management controller</span>
+          <span class="b-area">Embedded</span>
+          <span class="status s-shipped">Shipped</span>
+        </summary>
+        <div class="b-body">
+          <p>LM35 temperature sensing switching a 24&nbsp;V DC cooling fan through a relay, with a PLC-compatible interface and pilot lights. Built as a lab project.</p>
+          <p class="tags"><span>LM35</span><span>24 V relay</span><span>PLC interface</span></p>
+        </div>
+      </details>
+    </li>
+
+    <li data-area="embedded">
+      <details>
+        <summary>
+          <span class="b-name">ESP32 desk companion</span>
+          <span class="b-area">Embedded</span>
+          <span class="status s-active">Active</span>
+        </summary>
+        <div class="b-body">
+          <p>A small desk display with a 2.4" TFT, LVGL and a touch sensor. I'm building toward a Pomodoro timer, PC stats, time and weather, and battery levels for my devices.</p>
+          <p class="tags"><span>ESP32</span><span>LVGL</span><span>TFT</span></p>
+        </div>
+      </details>
+    </li>
+
+    <li data-area="vision">
+      <details>
+        <summary>
+          <span class="b-name">Crime classification</span>
+          <span class="b-area">Vision &amp; ML</span>
+          <span class="status s-shipped">Shipped</span>
+        </summary>
+        <div class="b-body">
+          <p>A classification pipeline on public crime data: cleaning and feature engineering, then several classifiers including XGBoost compared with confusion matrices.</p>
+          <p class="tags"><span>Python</span><span>Pandas</span><span>scikit-learn</span><span>XGBoost</span></p>
+        </div>
+      </details>
+    </li>
+
+    <li data-area="robotics">
+      <details>
+        <summary>
+          <span class="b-name">AUV swarm digital twin</span>
+          <span class="b-area">Robotics</span>
+          <span class="status s-concept">Concept</span>
+        </summary>
+        <div class="b-body">
+          <p>An architecture for coordinating underwater vehicles through a cloud and edge digital twin in Unity and Python, with a 6-DOF hydrodynamic model and edge-side consensus. Designed and documented, not built or tested.</p>
+          <p class="tags"><span>Unity/C#</span><span>Python</span></p>
+        </div>
+      </details>
+    </li>
+
+    <li data-area="robotics">
+      <details>
+        <summary>
+          <span class="b-name">Drone apple picking</span>
+          <span class="b-area">Robotics</span>
+          <span class="status s-concept">Concept</span>
+        </summary>
+        <div class="b-body">
+          <p>An idea I'm exploring: fly the drone manually to a tree, then hand over to vision-based control once an apple is directly in front of it.</p>
+        </div>
+      </details>
+    </li>
+  </ul>
+  <p class="filter-empty" hidden>Nothing in this area yet.</p>
+</section>
+
+<!-- ============ OPEN SOURCE ============ -->
+<section class="section wrap split" id="open-source" aria-labelledby="oss-h">
+  <div class="section-head">
+    <h2 id="oss-h">Open source</h2>
+    <p>Contributor in GirlScript Summer of Code 2026.</p>
+  </div>
+  <ul class="plain-list">
+    <li>Fixed joint-coordinate normalisation in a MediaPipe-based fitness tracker, in TypeScript and React.</li>
+    <li>Built an automated workflow that finds issues worth picking up across participating repositories.</li>
+  </ul>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section wrap" id="skills" aria-labelledby="skills-h">
+  <div class="section-head">
+    <h2 id="skills-h">Skills</h2>
+    <p>What I've used in the work above. Coursework is listed separately.</p>
+  </div>
+  <div class="skills">
+    <div>
+      <h3>Languages</h3>
+      <p>Python, C, C++, Embedded C, Bash. Working knowledge of TypeScript and React.</p>
+    </div>
+    <div>
+      <h3>Embedded</h3>
+      <p>ESP32, ESP8266, Raspberry Pi 5, ARM Cortex-M4/M7, FreeRTOS, VxWorks, PCA9685, UART, SPI, I2C, CAN, MQTT, PlatformIO.</p>
+    </div>
+    <div>
+      <h3>Robotics</h3>
+      <p>ROS 2 (Jazzy), RViz, Gazebo, URDF, ArduPilot SITL, DroneKit and MAVLink, QGroundControl, RPLiDAR, depth cameras.</p>
+    </div>
+    <div>
+      <h3>Vision and ML</h3>
+      <p>YOLOv8, OpenCV, ONNX Runtime, TensorFlow, ByteTrack, BoT-SORT, scikit-learn, NumPy, Pandas. Some PyTorch.</p>
+    </div>
+    <div>
+      <h3>Tools</h3>
+      <p>Linux, Git, Docker, GCP, SolidWorks, Fusion 360, Unity and C#.</p>
+    </div>
+    <div class="coursework">
+      <h3>Coursework</h3>
+      <p>Control systems, industrial robotics, kinematics, SLAM basics, RTOS and QNX, PLC and ladder logic (lab work on Siemens, Allen-Bradley and Mitsubishi), VFD basics, instrumentation.</p>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-label">[02] // Experience</div>
-  <h2 class="section-title">Experience</h2>
-  <div class="timeline-container reveal">
-    <div class="timeline-item">
-      <div class="timeline-date">May 2025 — July 2025</div>
-      <div class="timeline-title">AI Engineer Intern</div>
-      <div class="timeline-org">QID</div>
-      <div class="timeline-desc">Developed end-to-end processing pipelines using YOLOv8, OpenCV, and ONNX Runtime for real-time detection. Built orientation correction and preprocessing modules robust to lighting, rotation, and resolution changes. Deployed scalable pipelines across local systems and GCP. Maintained reproducible datasets and deployment workflows.</div>
+<!-- ============ EDUCATION ============ -->
+<section class="section wrap split" id="education" aria-labelledby="edu-h">
+  <div class="section-head">
+    <h2 id="edu-h">Education</h2>
+  </div>
+  <div class="edu">
+    <div class="edu-main">
+      <h3>B.Tech, Automation and Robotics</h3>
+      <p>SRM Institute of Science and Technology, Chennai. 2023 to 2027.</p>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2024 — 2025</div>
-      <div class="timeline-title">Research Project Member — 6-DOF Robotic Arm</div>
-      <div class="timeline-org">SRMIST, Mechatronics Team</div>
-      <div class="timeline-desc">Collaborated with a mechatronics team on a 6-DOF robotic arm. Built autonomous object identification and sorting workflows using ROS2 and OpenCV. Worked with sensor data streams and calibration workflows for manipulation tasks.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2022 — Present</div>
-      <div class="timeline-title">B.Tech in Automation & Robotics</div>
-      <div class="timeline-org">SRM Institute of Science and Technology, Chennai</div>
-      <div class="timeline-desc">Coursework includes control systems, embedded systems, robotics, machine learning, and QNX RTOS. Building independent projects across robotics, ML/CV, IoT, and industrial automation.</div>
-    </div>
+    <h3 class="edu-sub">Certifications</h3>
+    <ul class="plain-list">
+      <li>Oracle Cloud Infrastructure Generative AI Professional, 2025</li>
+      <li>Oracle Cloud Infrastructure Data Science Professional, 2025</li>
+      <li>Google Cloud: build an LLM and RAG chat application</li>
+      <li>QNX RTOS course</li>
+      <li>Robotics and AI industrial training, My Equation</li>
+    </ul>
   </div>
 </section>
 
-<!-- SKILLS / STACK -->
-<section id="skills">
-  <div class="section-label">[03] // Technical Stack</div>
-  <h2 class="section-title">Stack</h2>
-  <p class="section-intro reveal">Tools and technologies I actively build with.</p>
-  <div class="skills-tag-groups reveal">
-    <div class="skill-group">
-      <h4 class="skill-group-title">Core Languages</h4>
-      <div class="skill-tags">
-        <span>Python</span><span>C / C++</span><span>Embedded C</span><span>Bash</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <h4 class="skill-group-title">Robotics & Embedded</h4>
-      <div class="skill-tags">
-        <span>ROS2</span><span>ESP32</span><span>Arduino</span><span>Raspberry Pi</span><span>PCA9685 / PWM</span><span>MQTT</span><span>I2C / Serial</span><span>URDF</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <h4 class="skill-group-title">ML & Computer Vision</h4>
-      <div class="skill-tags">
-        <span>YOLOv8</span><span>OpenCV</span><span>ONNX Runtime</span><span>Scikit-learn</span><span>XGBoost</span><span>ByteTrack</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <h4 class="skill-group-title">Systems & Workflow</h4>
-      <div class="skill-tags">
-        <span>Git</span><span>Linux</span><span>Docker</span><span>GCP</span><span>QNX RTOS (coursework)</span>
-      </div>
-    </div>
+<!-- ============ CONTACT ============ -->
+<section class="contact wrap" id="contact" aria-labelledby="contact-h">
+  <h2 id="contact-h">Let's talk about robots.</h2>
+  <p>I'm looking for robotics, embedded and edge-AI roles, and I'm happy to talk through any of the projects above.</p>
+  <div class="contact-row">
+    <a class="contact-email" href="mailto:sharma.shreyas.2k5@gmail.com">sharma.shreyas.2k5@gmail.com</a>
+    <button class="btn btn-line copy-btn" type="button" data-copy="sharma.shreyas.2k5@gmail.com">Copy email</button>
   </div>
-</section>
-
-<!-- FEATURED PROJECTS -->
-<section id="projects">
-  <div class="section-label">[04] // Projects</div>
-  <h2 class="section-title">Featured Projects</h2>
-  <p class="section-intro reveal">Larger systems where I own the full build — from hardware to software.</p>
-  <div class="missions-grid reveal">
-
-    <div class="mission-card" data-category="ROBOTICS">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">Autonomous EV Charging Robot</div>
-        <span class="mission-status in-progress">In Progress</span>
-      </div>
-      <p class="mission-summary">Robotic arm that autonomously locates and docks an EV charging connector using computer vision and depth sensing.</p>
-      <p class="mission-desc">End-to-end perception-to-control pipeline. Custom Transformer-Enhanced YOLO (EVS-YOLO) for charging port detection. RGB-D camera and IMU integration for pose estimation. ROS2 nodes for frame transforms and control. Designed around a custom 5-DOF arm.</p>
-      <div class="mission-stack">
-        <span>ROS2</span><span>EVS-YOLO</span><span>RGB-D</span><span>IMU</span><span>Python</span>
-      </div>
-    </div>
-
-    <div class="mission-card" data-category="EMBEDDED">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">SmartNode — IoT Energy Monitoring System</div>
-        <span class="mission-status deployed">Working</span>
-      </div>
-      <p class="mission-summary">Full-stack local IoT system for real-time energy monitoring with ESP32 nodes, MQTT broker, and a React dashboard.</p>
-      <p class="mission-desc">ESP32 firmware publishes sensor telemetry over MQTT to a local Mosquitto broker. Node.js/TypeScript backend bridges data to a React/Vite frontend via WebSocket. Real-time per-appliance visualization. Fully local — no cloud dependencies. Earlier versions used Unity 3D for digital twin visualization.</p>
-      <div class="mission-stack">
-        <span>ESP32</span><span>MQTT</span><span>Node.js/TS</span><span>React</span><span>WebSocket</span>
-      </div>
-    </div>
-
-    <div class="mission-card" data-category="ML_CV">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">Drone Detection & Multi-Object Tracking</div>
-        <span class="mission-status in-progress">In Progress</span>
-      </div>
-      <p class="mission-summary">YOLO-based drone detection with ByteTrack multi-object tracking on a custom dataset.</p>
-      <p class="mission-desc">Per-frame YOLO detection with ByteTrack for persistent object IDs across video. Custom drone dataset. Full training, inference, and evaluation pipeline. Developed and benchmarked on Apple Silicon.</p>
-      <div class="mission-stack">
-        <span>YOLOv8</span><span>ByteTrack</span><span>OpenCV</span><span>Python</span>
-      </div>
-    </div>
-
-    <div class="mission-card" data-category="ROBOTICS">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">5-DOF Robotic Arm — Embedded Motion Control</div>
-        <span class="mission-status in-progress">In Progress</span>
-      </div>
-      <p class="mission-summary">Custom robotic arm with ESP32 firmware, PCA9685 servo driver, and Python-based inverse kinematics.</p>
-      <p class="mission-desc">4× MG996R torque servos + SG90 gripper. ESP32 + PCA9685 for synchronized PWM control. Task-structured embedded firmware. Python IK solver for pick-and-place paths. Designed to integrate with the EV charging perception stack.</p>
-      <div class="mission-stack">
-        <span>ESP32</span><span>PCA9685</span><span>Embedded C</span><span>Python</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- MORE PROJECTS -->
-<section id="more-projects">
-  <h2 class="section-title">More Projects</h2>
-  <p class="section-intro reveal">Focused builds across embedded control, IoT, applied ML, and industrial automation.</p>
-  <div class="missions-grid reveal">
-
-    <div class="mission-card" data-category="ROBOTICS">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">6-DOF Robotic Arm — Object Sorting with ROS2</div>
-        <span class="mission-status research">Research</span>
-      </div>
-      <p class="mission-desc">Collaborative research project. Autonomous object identification and sorting using ROS2 and OpenCV. Sensor data stream integration and calibration workflows for a 6-DOF manipulator.</p>
-      <div class="mission-stack">
-        <span>ROS2</span><span>OpenCV</span><span>Python</span>
-      </div>
-    </div>
-
-    <div class="mission-card" data-category="ML_CV">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">Crime Classification — Applied ML Pipeline</div>
-        <span class="mission-status deployed">Complete</span>
-      </div>
-      <p class="mission-desc">End-to-end classification pipeline on real crime data. Full ETL and feature engineering. Multi-classifier comparison (including XGBoost) with metrics and confusion matrices. Reproducible experiment scripts and reusable inference pipeline.</p>
-      <div class="mission-stack">
-        <span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>XGBoost</span>
-      </div>
-    </div>
-
-    <div class="mission-card" data-category="ROBOTICS">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">Hexapod Robot — Servo Gait Control</div>
-        <span class="mission-status prototype">Prototype</span>
-      </div>
-      <p class="mission-desc">Terrain-capable six-legged walking robot. Multi-servo coordinated locomotion with gait pattern programming. Demonstrates legged robotics and multi-actuator control fundamentals.</p>
-      <div class="mission-stack">
-        <span>Arduino</span><span>Servo Control</span><span>C++</span>
-      </div>
-    </div>
-
-    <div class="mission-card" data-category="EMBEDDED">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">Ball-Balancing Robot — PID Control</div>
-        <span class="mission-status prototype">Prototype</span>
-      </div>
-      <p class="mission-desc">Closed-loop control system that balances a ball on a platform using PID feedback. Real-time sensor feedback with PID tuning for stable positioning. Classical control theory applied to physical hardware.</p>
-      <div class="mission-stack">
-        <span>PID</span><span>Sensors</span><span>Control Systems</span>
-      </div>
-    </div>
-
-    <div class="mission-card" data-category="EMBEDDED">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">Incubator Control System — ESP32 + I2C</div>
-        <span class="mission-status deployed">Complete</span>
-      </div>
-      <p class="mission-desc">Embedded closed-loop environmental controller. ESP32 as control master, Arduino Uno as display slave over I2C. Hysteresis-based actuator control for humidifier and exhaust fan. Real-time sensor visualization.</p>
-      <div class="mission-stack">
-        <span>ESP32</span><span>Arduino</span><span>I2C</span><span>Embedded C</span>
-      </div>
-    </div>
-
-    <div class="mission-card" data-category="EMBEDDED">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">Hospital Queue & Crowd Monitor — AIoT</div>
-        <span class="mission-status deployed">Complete</span>
-      </div>
-      <p class="mission-desc">ESP8266-based queue management. RC522 RFID for patient verification. Dual IR sensors for entry/exit counting. Auto token generation and queue logic. Web-based frontend for real-time monitoring.</p>
-      <div class="mission-stack">
-        <span>ESP8266</span><span>RFID</span><span>IR Sensors</span><span>HTML/JS</span>
-      </div>
-    </div>
-
-    <div class="mission-card" data-category="EMBEDDED">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">Industrial Thermal Management System</div>
-        <span class="mission-status deployed">Complete</span>
-      </div>
-      <p class="mission-desc">Temperature monitoring and cooling control. LM35 temperature sensing. 24V DC cooling fan controlled via relay module. PLC-compatible interface with LED pilot lights.</p>
-      <div class="mission-stack">
-        <span>LM35</span><span>24V Relay</span><span>PLC Interface</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- EXPERIMENTS -->
-<section id="experiments">
-  <h2 class="section-title">Experiments</h2>
-  <p class="section-intro reveal">Smaller explorations and learning projects.</p>
-  <div class="missions-grid reveal">
-
-    <div class="mission-card" data-category="EMBEDDED">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">Smart Irrigation — MQTT IoT Controller</div>
-        <span class="mission-status experiment">Experiment</span>
-      </div>
-      <p class="mission-desc">ESP32-based soil moisture monitoring with dual pumps, auto/manual modes, and MQTT dashboard control.</p>
-      <div class="mission-stack">
-        <span>ESP32</span><span>MQTT</span><span>Sensors</span>
-      </div>
-    </div>
-
-    <div class="mission-card" data-category="ML_CV">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">Twitter Engagement Bot</div>
-        <span class="mission-status experiment">Experiment</span>
-      </div>
-      <p class="mission-desc">Automated engagement bot with lightweight NLP-based content filtering.</p>
-      <div class="mission-stack">
-        <span>Python</span><span>NLP</span>
-      </div>
-    </div>
-
-    <div class="mission-card" data-category="ML_CV">
-      <div class="scan-fx"></div>
-      <div class="mission-header">
-        <div class="mission-codename">Flappy Bird — ML Agent Simulation</div>
-        <span class="mission-status experiment">Experiment</span>
-      </div>
-      <p class="mission-desc">Reinforcement learning experiment training an agent to play Flappy Bird.</p>
-      <div class="mission-stack">
-        <span>Python</span><span>ML</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-label">[06] // Contact</div>
-  <h2 class="section-title">Contact</h2>
-  <div class="contact-grid reveal">
-    <div class="contact-info">
-      <h3>Get in Touch</h3>
-      <p>Open to internships, research collaborations, and project discussions in robotics, embedded systems, and applied ML.</p>
-      <div class="contact-detail">
-        <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M12 21c-4.97-5.03-8-8.54-8-12a8 8 0 1116 0c0 3.46-3.03 6.97-8 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        Chennai, Tamil Nadu, India
-      </div>
-      <div class="contact-detail">
-        <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="0"/><path d="M22 4L12 13 2 4"/></svg>
-        sharma.shreyas.2k5@gmail.com
-      </div>
-      <div class="contact-socials">
-        <a href="https://github.com/Unsoph" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-        <a href="https://www.linkedin.com/in/shreyas-sharma05/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-      </div>
-    </div>
-    <form class="contact-form" id="contact-form">
-      <label class="terminal-label">> NAME:</label>
-      <input type="text" name="name" placeholder="_" required>
-      <label class="terminal-label">> EMAIL:</label>
-      <input type="email" name="email" placeholder="_" required>
-      <label class="terminal-label">> MESSAGE:</label>
-      <textarea name="message" placeholder="_" required></textarea>
-      <button type="submit">[SEND MESSAGE]</button>
-    </form>
-  </div>
+  <ul class="hero-links" aria-label="Profiles">
+    <li><a href="https://github.com/Unsoph" rel="noopener">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/shreyas-sharma05/" rel="noopener">LinkedIn</a></li>
+  </ul>
+  <p class="contact-place">Based in Chennai, India.</p>
 </section>
 
 </main>
 
-<footer id="footer">
-  <span class="footer-sig">SHREYAS SHARMA // 2026</span>
-  <span class="footer-tech">HTML + CSS + Vanilla JS + GSAP</span>
+<footer class="site-footer wrap">
+  <p>© 2026 Shreyas Sharma</p>
+  <p>Hand-written HTML, CSS and JavaScript. <a href="https://github.com/Unsoph/Shreyas-Portfolio" rel="noopener">Source</a></p>
 </footer>
 
-<button id="back-to-top" aria-label="Back to top">&#8679;</button>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="main.js"></script>
+<script src="main.js" defer></script>
 </body>
 </html>

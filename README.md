@@ -1,76 +1,63 @@
-# Shreyas Sharma — Portfolio
+# Shreyas Sharma, portfolio
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-cyan.svg)](./LICENSE)
-[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-blue.svg)](https://unsoph.github.io/Portfolio)
+Source for [shreyassharma.dev](https://shreyassharma.dev): robotics, embedded systems and edge computer vision.
 
-Personal portfolio website for **Shreyas Sharma** — showcasing robotics, embedded systems, ML/CV, and autonomous systems projects.
+Hosted on Vercel. Every push to `main` deploys; pull requests get a preview URL.
 
-## 🔗 Live Demo
+## What's on the page
 
-> Deploy via GitHub Pages — **Settings → Pages → Deploy from branch → `main`**
+| Section | Contents |
+|---|---|
+| Hero | Name, positioning, and an interactive two-link arm that solves inverse kinematics toward your pointer |
+| Work | Dtown Robotics, Elcom Innovations, QID, SRMIST research |
+| Projects | Five flagship systems, each with a status and a "built / next" split |
+| Smaller builds | Filterable, expandable list of hardware, IoT and vision projects |
+| Open source, Skills, Education | GSSoC 2026, skills (coursework kept separate), certifications |
+| Contact | Email, copy-to-clipboard, GitHub, LinkedIn |
 
-## ✨ Features
+### Project statuses
 
-- **Boot Sequence** — Terminal-style startup animation with click-to-skip
-- **Particle Canvas** — Animated background with interconnected node visualization
-- **Blueprint Mode** — Toggle to a blue engineering CAD aesthetic with visible grid overlay
-- **SFX Toggle** — Synthesized Web Audio API click sounds on interaction
-- **Custom Cursor** — Crosshair cursor with trailing particle effect (desktop only)
-- **Scroll Animations** — GSAP ScrollTrigger reveal effects with IntersectionObserver fallback
-- **Responsive** — Fully functional on mobile with hamburger menu
+| Status | Meaning |
+|---|---|
+| Shipped | Works end to end |
+| Active | In development now |
+| Simulation | Verified in simulation only |
+| Prototype | Hardware built, partly working |
+| Concept | Designed, not built |
 
-## 🛠 Tech Stack
+Keep these honest when editing: a project moves to Shipped only when it actually works end to end.
 
-| Layer | Technology |
-|-------|-----------|
-| Structure | HTML5 (semantic) |
-| Styling | Vanilla CSS (custom properties, grid, flexbox) |
-| Logic | Vanilla JavaScript (ES6+) |
-| Animation | GSAP 3 + ScrollTrigger (CDN) |
-| Audio | Web Audio API |
-| Fonts | Google Fonts (Orbitron, JetBrains Mono, Inter) |
+## Stack
 
-## 📁 File Structure
+Plain HTML, CSS and JavaScript. No build step, no framework, no runtime dependencies.
+
+- Type: [Archivo](https://fonts.google.com/specimen/Archivo), using its variable width axis for headings
+- Colour: steel greys with one Kapton-amber accent, light and dark themes (follows the system, with a toggle)
+- Arm: `<canvas>` with analytic 2-link IK and rate-limited joints; arrow keys move the target, Space toggles the gripper; idle motion is off under `prefers-reduced-motion`
+
+## Files
 
 ```
-Portfolio/
-├── index.html      # Single-page markup (all sections)
-├── style.css       # Complete stylesheet (~990 lines)
-├── main.js         # All interactions and animations (~380 lines)
-├── README.md       # This file
-├── LICENSE         # MIT License
-└── .gitignore      # macOS / IDE / Node exclusions
+index.html     all content
+style.css      design tokens and layout
+main.js        theme, nav, filters, copy email, the arm
+favicon.svg    arm glyph, adapts to dark mode
+og-image.png   1200x630 social preview
+robots.txt, sitemap.xml
 ```
 
-## 🚀 Local Development
+## Editing content
 
-No build step required. Open `index.html` directly in any modern browser:
+- **Add a flagship project:** copy an `<article class="project">` block in `#projects`.
+- **Add a smaller build:** copy an `<li data-area="...">` in `.builds`. `data-area` is one of `robotics`, `embedded`, `iot`, `vision`, and drives the filter chips.
+- **Status chip:** `<span class="status s-shipped|s-active|s-sim|s-proto|s-concept">`.
+
+## Local preview
 
 ```bash
-# Option 1: Direct open
-open index.html
-
-# Option 2: Local server (avoids CORS issues if you add assets later)
 npx serve .
 ```
 
-## 📦 Deployment (GitHub Pages)
-
-1. Push this repo to GitHub
-2. Go to **Settings → Pages**
-3. Set source to **Deploy from a branch → `main` → `/ (root)`**
-4. Your site will be live at `https://<username>.github.io/<repo-name>/`
-
-## 📋 Sections
-
-| # | Section | Description |
-|---|---------|-------------|
-| 01 | About | Bio, education (SRMIST), focus areas |
-| 02 | Experience | QID AI internship, 6-DOF research collaboration, B.Tech |
-| 03 | Stack | Tag-grouped technical skills (no percentage bars) |
-| 04 | Projects | 4 featured + 7 more + 3 experiments = 14 total builds |
-| 05 | Contact | Email form (mailto) + GitHub + LinkedIn links |
-
-## 📄 License
+## License
 
 [MIT](./LICENSE) © 2026 Shreyas Sharma
