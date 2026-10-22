@@ -96,15 +96,15 @@
 
   <figure class="workcell" aria-labelledby="workcell-caption">
     <div class="workcell-stage">
-      <canvas id="arm" role="img" aria-label="A two-joint robot arm that reaches toward your pointer using inverse kinematics"></canvas>
+      <canvas id="arm" role="img" aria-label="A robot arm that stacks blocks into shapes and lets you pick blocks up"></canvas>
     </div>
     <div class="readout" aria-live="off">
       <div><span class="readout-k">Shoulder</span><span class="readout-v" id="ro-t1">0.0°</span></div>
       <div><span class="readout-k">Elbow</span><span class="readout-v" id="ro-t2">0.0°</span></div>
       <div><span class="readout-k">Tool x, y</span><span class="readout-v" id="ro-xy">0, 0 mm</span></div>
-      <div><span class="readout-k">Target</span><span class="readout-v" id="ro-state">Idle path</span></div>
+      <div><span class="readout-k">Task</span><span class="readout-v" id="ro-state">Starting</span></div>
     </div>
-    <figcaption id="workcell-caption">Point anywhere in this panel. The arm solves two-link inverse kinematics and slews its joints toward the target at a limited rate, like a servo would. Click to close the gripper.</figcaption>
+    <figcaption id="workcell-caption">Left alone, the arm takes its blocks apart and rebuilds them as a new shape on the other side. Point to take over, then hold the mouse on a block to pick it up and let go to drop it. On a phone, tap to pick up and tap again to drop.</figcaption>
   </figure>
 </section>
 
